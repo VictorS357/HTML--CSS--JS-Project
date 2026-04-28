@@ -55,12 +55,74 @@ main {
 
 .header-text p {
   color: rgb(96, 96, 96);
+  white-space: nowrap;
+  font-size: 12px;
 }
 
 .input-container {
   display: flex;
   flex-direction: column;
 }
+
+.input-div-primary {
+  display: flex;
+  position: relative;
+}
+
+.input-div-primary i {
+  position: absolute;
+  left: 10px;
+  top: 20%;
+  font-size: 14px;
+  color: rgb(151, 151, 151);
+}
+
+.input-div-primary input {
+  padding: 10px 30px 10px 40px;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid rgb(151, 151, 151);
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.input-div-primary input:focus {
+  border-color: #3b82fe;
+  background: white;
+  box-shadow: 0 0 10px 4px rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.input-div-primary input:focus + i {
+  color: #3b82fe;
+  transform: translateY(-1px);
+}
+
+.sign-forgot-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-forgot-div a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #3b82fe;
+  text-align: end;
+}
+
+.btn-primary {
+  background-color: #3b82fe;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 7px;
+}
+
+.loading {
+  display: none;
+}
+
+
 /*
 .form-container {
   display: none;
