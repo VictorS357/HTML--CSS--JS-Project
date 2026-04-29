@@ -13,7 +13,7 @@
 <body>
   <main>
     <div class="forms">
-      <div class="form-container js-form-container active">
+      <div class="form-container js-login-container active">
         <div class="header-text">
           <h1>Welcome Back</h1>
           <p>Sign in to your account to continue your journey</p>
@@ -47,11 +47,11 @@
           </div>
         </div>
         <div class="show-page-div">
-          <div>Don't have an account? <a href="#">Create one</a></div>
+          <div>Don't have an account? <a href="#" class="js-create-acc-link">Create one</a></div>
         </div>
       </div>
 
-      <div class="form-container js-form-container">
+      <div class="form-container js-create-container">
         <div class="header-text">
           <h1>Create Account</h1>
           <p>Join thousands of users and start your journey today</p>
@@ -94,7 +94,7 @@
           </div>
         </div>
         <div class="show-page-div">
-          <div>Already have an account? <a href="#" class="sign-in-link">Sign in</a></div>
+          <div>Already have an account? <a href="#" class="sign-in-link js-switch-page-link">Sign in</a></div>
         </div>
       </div>
 
@@ -114,7 +114,7 @@
           </button>
         </div>
         <div class="show-page-div">
-          <div>Remember your password? <a href="#" class="sign-in-link">Sign in</a></div>
+          <div>Remember your password? <a href="#" class="sign-in-link js-switch-page-link">Sign in</a></div>
         </div>
       </div>
     </div>
@@ -126,5 +126,7 @@
       </div>
     </div>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
