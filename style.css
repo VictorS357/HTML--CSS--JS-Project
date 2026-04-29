@@ -73,30 +73,33 @@ main {
 .input-div-primary i {
   position: absolute;
   left: 10px;
-  top: 20%;
+  top: 25%;
   font-size: 14px;
   color: rgb(151, 151, 151);
 }
 
 .input-div-primary input {
-  padding: 10px 30px 10px 40px;
+  padding: 14px 30px 14px 40px;
   width: 100%;
   border-radius: 7px;
   border: 1px solid rgb(151, 151, 151);
   margin-bottom: 20px;
   outline: none;
+  font-size: 16px;
 }
 
 .input-div-primary input:focus {
   border-color: #3b82fe;
   background: white;
   box-shadow: 0 0 10px 4px rgba(59, 130, 246, 0.1);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  transition: transform 0.2s;
 }
 
 .input-div-primary input:focus + i {
   color: #3b82fe;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  transition: transform 0.2s;
 }
 
 .sign-forgot-div {
@@ -128,8 +131,17 @@ main {
   background-color: #3b82fe;
   color: white;
   border: none;
-  padding: 12px;
+  padding: 14px 10px;
   border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #2e66c5;
+  transform: translateY(-2px);
+  box-shadow: 0 10 25px rgba(59, 130, 246, 0.3);
+  transition: 0.2s;
 }
 
 .loading {
@@ -209,16 +221,22 @@ main {
   text-decoration: underline;
 }
 
-
 .form-container {
   display: none;
-
 }
 
 .form-container.active {
   display: block;
 }
 
-button {
-  cursor: pointer;
+.checkbox-div {
+  font-size: 14px;
+  margin-bottom: 25px;
+  color: rgb(151, 151, 151);
+  margin-top: 5px;
+}
+
+.checkbox-div a {
+  font-size: 14px;
+  text-decoration: underline;
 }
