@@ -13,7 +13,7 @@
 <body>
   <main>
     <div class="forms">
-      <div class="form-container active">
+      <div class="form-container js-form-container active">
         <div class="header-text">
           <h1>Welcome Back</h1>
           <p>Sign in to your account to continue your journey</p>
@@ -51,7 +51,7 @@
         </div>
       </div>
 
-      <div class="form-container">
+      <div class="form-container js-form-container">
         <div class="header-text">
           <h1>Create Account</h1>
           <p>Join thousands of users and start your journey today</p>
@@ -71,7 +71,10 @@
           </div>
         </div>
         <div class="sign-forgot-div">
-          <a href="#" class="forgot-password-link">Forgot Password</a>
+          <div class="checkbox-div">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+          </div>
           <button class="btn-primary">
             <i class="fa-solid fa-spinner loading"></i> <span>Sign In</span>
           </button>
@@ -95,7 +98,7 @@
         </div>
       </div>
 
-      <div class="form-container">
+      <div class="form-container js-form-container">
         <div class="header-text">
           <h1>Reset Password</h1>
           <p>Enter your email adress and we'll send you notifications to reset your password</p>
@@ -106,7 +109,6 @@
           </div>
         </div>
         <div class="sign-forgot-div">
-          <a href="#" class="forgot-password-link">Forgot Password</a>
           <button class="btn-primary">
             <i class="fa-solid fa-spinner loading"></i> <span>Send Reset Instructions</span>
           </button>

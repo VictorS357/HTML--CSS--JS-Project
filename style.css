@@ -209,7 +209,7 @@ main {
   text-decoration: underline;
 }
 
-/*
+
 .form-container {
   display: none;
 
@@ -218,4 +218,7 @@ main {
 .form-container.active {
   display: block;
 }
-*/
+
+button {
+  cursor: pointer;
+}
