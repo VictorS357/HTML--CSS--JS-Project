@@ -51,12 +51,13 @@ main {
 
 .header-text h1 {
   margin-bottom: 15px;
+  font-size: 36px;
 }
 
 .header-text p {
-  color: rgb(96, 96, 96);
+  color: rgb(144, 144, 144);
   white-space: nowrap;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .input-container {
@@ -103,11 +104,24 @@ main {
   flex-direction: column;
 }
 
+.sign-forgot-div span {
+  text-align: end;
+}
+
 .sign-forgot-div a {
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
   color: #3b82fe;
-  text-align: end;
+  margin-bottom: 7px;
+  font-weight: 500;
+}
+
+.sign-forgot-div a:hover {
+  text-decoration: underline;
+}
+
+.span-link {
+  margin-bottom: 5px;
 }
 
 .btn-primary {
@@ -135,15 +149,64 @@ main {
 .continue-with {
   text-align: center;
   margin-top: 10px;
-  color: rgb(96, 96, 96);
+  color: rgb(144, 144, 144);
+  font-size: 14px;
+  position: relative;
+  font-weight: 500;
+}
+
+.continue-with::before,
+.continue-with::after {
+  content: '';
+  width: 35%;
+  height: 1px;
+  position: absolute; 
+  top: 50%;
+  background: #e2e8f0;
+}
+
+.continue-with::before {
+  left: 0;
+}
+
+.continue-with::after {
+  right: 0;
 }
 
 .social-login {
   display: flex;
+  justify-content: space-between;
 }
 
 .secondary-btn {
   border: 1px solid gray;
+  padding: 10px 60px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+}
+
+.create-acc-div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.show-page-div {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(144, 144, 144);
+}
+
+.show-page-div a {
+  text-decoration: none;
+  color: #3b82fe;
+}
+
+.show-page-div a:hover {
+  text-decoration: underline;
 }
 
 /*
