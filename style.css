@@ -56,7 +56,6 @@ main {
 
 .header-text p {
   color: rgb(144, 144, 144);
-  white-space: nowrap;
   font-size: 14px;
 }
 

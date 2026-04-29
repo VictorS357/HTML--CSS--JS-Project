@@ -5,6 +5,7 @@ const forgotContainer = document.querySelector('.js-forgot-container');
 const createAccLink = document.querySelector('.js-create-acc-link');
 const forgotLink = document.querySelector('.js-forgot-link');
 const loginLink = document.querySelector('.js-sign-in-link');
+const loginLink2 = document.querySelector('.js-login-link')
 
 function switchToCreatePage() {
   loginContainer.classList.remove('active');
@@ -34,4 +35,8 @@ loginLink.addEventListener('click', () => {
 
 forgotLink.addEventListener('click', () => {
   switchToForgotPage();
+});
+
+loginLink2.addEventListener('click', () => {
+  switchToLoginPage();
 });
