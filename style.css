@@ -41,6 +41,9 @@ main {
   color: white;
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .header-text {
@@ -93,13 +96,13 @@ main {
   background: white;
   box-shadow: 0 0 10px 4px rgba(59, 130, 246, 0.1);
   transform: translateY(-2px);
-  transition: transform 0.2s;
+  transition: transform 0.1s;
 }
 
 .input-div-primary input:focus + i {
   color: #3b82fe;
   transform: translateY(-2px);
-  transition: transform 0.2s;
+  transition: transform 0.1s;
 }
 
 .sign-forgot-div {
@@ -144,7 +147,17 @@ main {
   background-color: #2e66c5;
   transform: translateY(-2px);
   box-shadow: 0 10 25px rgba(59, 130, 246, 0.3);
-  transition: 0.2s;
+  transition: 0.1s;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .loading {
@@ -190,15 +203,36 @@ main {
 
 .social-login {
   display: flex;
-  justify-content: space-between;
+  gap: 12px;
 }
 
 .secondary-btn {
   border: 1px solid gray;
-  padding: 10px 60px;
+  padding: 14px 60px;
   margin-top: 15px;
   margin-bottom: 20px;
   border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.secondary-btn:hover {
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  box-shadow: 0 8 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.1s border-color 0.1s;
+}
+
+.secondary-btn.google {
+  color: #ea4335;
+}
+
+.secondary-btn.facebook {
+  color: #1877f2;
 }
 
 .create-acc-div {
@@ -251,4 +285,18 @@ main {
   font-size: 14px;
   color: #3b82fe;
   text-decoration: none;
+}
+
+.right-section h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.32px;
+}
+
+.right-section p {
+  font-size: 16px;
+  line-height: 24px;
+  opacity: 0.8;
+  color: #cbd5e1;
 }
