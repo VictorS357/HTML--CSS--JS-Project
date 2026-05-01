@@ -94,10 +94,10 @@ main {
 .input-div-primary i {
   position: absolute;
   left: 16px;
-  top: 30%;
+  top: 28%;
   font-size: 14px;
   color: #94a3b8;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .input-div-primary input {
@@ -116,13 +116,13 @@ main {
   background: white;
   box-shadow: 0 0 10px 4px rgba(59, 130, 246, 0.1);
   transform: translateY(-2px);
-  transition: transform 0.1s;
+  transition: all 0.3s ease;
 }
 
 .input-div-primary input:focus + i {
   color: #3b82fe;
   transform: translateY(-2px);
-  transition: transform 0.1s;
+  transition: all 0.3s ease;
 }
 
 .sign-forgot-div {
@@ -244,13 +244,13 @@ main {
   justify-content: center;
   font-size: 18px;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .secondary-btn:hover {
   transform: translateY(-2px);
   border-color: #cbd5e1;
   box-shadow: 0 8 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.1s border-color 0.1s;
 }
 
 .secondary-btn.google {
