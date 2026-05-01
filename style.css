@@ -166,14 +166,13 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  gap: 8px;
 }
 
 .btn-primary:hover {
   background-color: #2e66c5;
   transform: translateY(-2px);
   box-shadow: 0 10 25px rgba(59, 130, 246, 0.3);
-  transition: 0.1s;
 }
 
 .btn-primary:active {
@@ -187,11 +186,11 @@ main {
 }
 
 .loading {
-  display: none;
+  display: none !important;
 }
 
 .loading.show {
-  display: inline-block;
+  display: inline-block !important;
   animation: spin 1s linear infinite;
 }
 
