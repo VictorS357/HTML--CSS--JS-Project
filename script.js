@@ -84,7 +84,37 @@ document.querySelectorAll('.js-submit-btn').forEach((button) => {
         loading.classList.remove('show');
       });
       button.disabled = false;
+      if (button.id === 'signIn') {
+        showNotificationMsg('Login Sucessfull! Redirecting...');
+      } else if (button.id === 'createAcc') {
+        showNotificationMsg('Account created succesfully! Please check your email.')
+      } else {
+        showNotificationMsg('Password reset instructions sent to your email.')
+      }
     }, 4000);
   });
 });
+
+function showNotificationMsg(message) {
+  const notification = document.createElement('div');
+  notification.style.cssText = `
+    background-color: #10b981;
+    color: white;
+    position: fixed;
+    z-index: 1000;
+    top: 20px;
+    right: 20px;
+    animation: slideInRight 0.5s ease;
+    padding: 16px 24px;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+    border-radius: 12px;
+    font-weight: 600;
+  `;
+
+  notification.textContent = message;
+  document.body.appendChild(notification);
+  setTimeout(() => {
+    notification.remove();
+  }, 5000);
+}
 
