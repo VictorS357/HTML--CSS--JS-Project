@@ -118,3 +118,15 @@ function showNotificationMsg(message) {
   }, 5000);
 }
 
+document.querySelectorAll('.js-secondary-btn').forEach((button) => {
+  button.addEventListener('click', () => {
+    if (button.classList.contains('facebook')) {
+      showNotificationMsg('Facebook login initiated!');
+    } else if (button.classList.contains('google')) {
+      showNotificationMsg('Google login initiated!');
+    } else {
+      showNotificationMsg('X login initiated!');
+    }
+  });
+});
+
