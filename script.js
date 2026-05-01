@@ -52,3 +52,39 @@ forgotLink.addEventListener('click', () => {
 loginLink2.addEventListener('click', () => {
   switchToLoginPage();
 });
+
+function showLoadingAnimation(loadingText, button, loading) {
+  loading.classList.add('show');
+  button.querySelector('.btn-text').innerHTML = loadingText;
+  button.disabled = true;
+}
+
+const loginBtnElement = document.querySelector('.js-sign-btn');
+const createBtnElement = document.querySelector('.js-create-btn');
+const forgotBtnElement = document.querySelector('.js-forgot-btn');
+
+document.querySelectorAll('.js-submit-btn').forEach((button) => {
+  button.addEventListener('click', () => {
+    const btnText = button.querySelector('.btn-text');
+    const originalText = btnText.innerText;
+
+    if (button.classList.contains('js-sign-btn')) {
+      const loading = button.querySelector('.js-loading1');
+      showLoadingAnimation('Signing in...', button, loading);
+    } else if (button.classList.contains('js-create-btn')) {
+      const loading = button.querySelector('.js-loading2');
+      showLoadingAnimation('Creating account...', button, loading);
+    } else {
+      const loading = button.querySelector('.js-loading3');
+      showLoadingAnimation('Sending instructions...', button, loading);
+    }
+    setTimeout(() => {
+      btnText.innerHTML = originalText;
+      button.querySelectorAll('.loading').forEach((loading) => {
+        loading.classList.remove('show');
+      });
+      button.disabled = false;
+    }, 4000);
+  });
+});
+
