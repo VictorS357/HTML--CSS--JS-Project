@@ -67,13 +67,17 @@ document.querySelectorAll('.js-submit-btn').forEach(button => {
   button.addEventListener('click', () => {
     const btnText = button.querySelector('.btn-text');
     const originalText = btnText.innerText;
+    let isValid = true;
 
     if (button.classList.contains('js-sign-btn')) {
       const loading = button.querySelector('.js-loading1');
       showLoadingAnimation('Signing in...', button, loading);
     } else if (button.classList.contains('js-create-btn')) {
       const loading = button.querySelector('.js-loading2');
-      showLoadingAnimation('Creating account...', button, loading);
+      isValid = validatePassword();
+        if (isValid) {
+          showLoadingAnimation('Creating account...', button, loading);
+        }
     } else {
       const loading = button.querySelector('.js-loading3');
       showLoadingAnimation('Sending instructions...', button, loading);
@@ -87,13 +91,29 @@ document.querySelectorAll('.js-submit-btn').forEach(button => {
       if (button.id === 'signIn') {
         showNotificationMsg('Login Sucessfull! Redirecting...');
       } else if (button.id === 'createAcc') {
-        showNotificationMsg('Account created succesfully! Please check your email.')
+        if (!isValid) return;
+        showNotificationMsg('Account created succesfully! Please check your email.');
       } else {
-        showNotificationMsg('Password reset instructions sent to your email.')
+        showNotificationMsg('Password reset instructions sent to your email.');
       }
     }, 4000);
   });
 });
+
+function validatePassword() {
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  if (password !== confirmPassword) {
+    alert("Passwords don't match");
+    return false;
+  } else if (password.length < 8) {
+    alert("Your password must have at least 8 characters");
+    return false;
+  }
+  
+  return true;
+}
 
 function showNotificationMsg(message) {
   const notification = document.createElement('div');
