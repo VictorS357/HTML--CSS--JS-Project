@@ -63,7 +63,7 @@ const loginBtnElement = document.querySelector('.js-sign-btn');
 const createBtnElement = document.querySelector('.js-create-btn');
 const forgotBtnElement = document.querySelector('.js-forgot-btn');
 
-document.querySelectorAll('.js-submit-btn').forEach((button) => {
+document.querySelectorAll('.js-submit-btn').forEach(button => {
   button.addEventListener('click', () => {
     const btnText = button.querySelector('.btn-text');
     const originalText = btnText.innerText;
@@ -80,7 +80,7 @@ document.querySelectorAll('.js-submit-btn').forEach((button) => {
     }
     setTimeout(() => {
       btnText.innerHTML = originalText;
-      button.querySelectorAll('.loading').forEach((loading) => {
+      button.querySelectorAll('.loading').forEach(loading => {
         loading.classList.remove('show');
       });
       button.disabled = false;
@@ -118,7 +118,7 @@ function showNotificationMsg(message) {
   }, 5000);
 }
 
-document.querySelectorAll('.js-secondary-btn').forEach((button) => {
+document.querySelectorAll('.js-secondary-btn').forEach(button => {
   button.addEventListener('click', () => {
     if (button.classList.contains('facebook')) {
       showNotificationMsg('Facebook login initiated!');
@@ -130,3 +130,24 @@ document.querySelectorAll('.js-secondary-btn').forEach((button) => {
   });
 });
 
+document.querySelectorAll('.text-input-primary').forEach(input => {
+  input.addEventListener('focus', () => {
+    this.parentNode.querySelector('i').style.color = '#3b82f6';
+    this.classList.add('focused');
+  });
+
+  input.addEventListener('blur', () => {
+    if (!this.value) {
+      this.parentNode.querySelector('i').style.color = '#94a3b8'
+    }
+    this.classList.remove('focused');
+  });
+
+  input.addEventListener('input', () => {
+    if (this.type === 'email') {
+      const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value);
+      this.classList.toggle('sucess', isValid && this.value.length > 0);
+      this.classList.toggle('error', !isValid && this.value.length > 0);
+    }
+  });
+});
