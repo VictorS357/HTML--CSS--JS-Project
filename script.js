@@ -131,23 +131,27 @@ document.querySelectorAll('.js-secondary-btn').forEach(button => {
 });
 
 document.querySelectorAll('.text-input-primary').forEach(input => {
-  input.addEventListener('focus', () => {
+  input.addEventListener('focus', function() {
     this.parentNode.querySelector('i').style.color = '#3b82f6';
     this.classList.add('focused');
   });
 
-  input.addEventListener('blur', () => {
+  input.addEventListener('blur', function() {
     if (!this.value) {
       this.parentNode.querySelector('i').style.color = '#94a3b8'
     }
     this.classList.remove('focused');
   });
 
-  input.addEventListener('input', () => {
+  input.addEventListener('input', function() {
     if (this.type === 'email') {
       const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value);
       this.classList.toggle('sucess', isValid && this.value.length > 0);
       this.classList.toggle('error', !isValid && this.value.length > 0);
     }
   });
+});
+
+window.addEventListener('load', function() {
+  this.document.querySelector('main').style.animation = 'fadeIn 1s ease';
 });

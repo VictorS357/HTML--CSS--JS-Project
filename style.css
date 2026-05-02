@@ -100,7 +100,7 @@ main {
   transition: all 0.3s ease;
 }
 
-.input-div-primary input {
+.text-input-primary {
   padding: 16px 20px 16px 48px;
   width: 100%;
   border-radius: 7px;
@@ -111,18 +111,16 @@ main {
   transition: all 0.3s ease;
 }
 
-.input-div-primary input:focus {
+.text-input-primary:focus {
   border-color: #3b82fe;
   background: white;
   box-shadow: 0 0 10px 4px rgba(59, 130, 246, 0.1);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
   transition: all 0.3s ease;
 }
 
-.input-div-primary input:focus + i {
+.text-input-primary:focus + i {
   color: #3b82fe;
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
 }
 
 .sign-forgot-div {
@@ -288,6 +286,19 @@ main {
 
 .form-container.active {
   display: block;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: 0;
+  }
 }
 
 .checkbox-div {
@@ -374,4 +385,47 @@ main {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  top {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.forms {
+  animation: slideInLeft 0.8s ease;
+}
+
+.right-section {
+  animation: slideInRight 0.8s ease;
+}
+
+.text-input-primary.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.text-input-primary.sucess {
+  border-color: #10b981;
+  background-color: #f0fdfa;
+}
+
+.text-input-primary:focus {
+  animation: focusPulse 0.5s ease;
+}
+
+.text-input-primary:focus + i {
+  animation: focusPulse 0.5s ease;
+}
+
+@keyframes focusPulse {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.02);}
+  100% {transform: scale(1);}
 }
