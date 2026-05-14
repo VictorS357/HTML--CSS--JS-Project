@@ -429,3 +429,59 @@ main {
   50% {transform: scale(1.02);}
   100% {transform: scale(1);}
 }
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px;
+    border-radius: 20px;
+  }
+
+  .right-section {
+    min-height: 200px;
+    order: -1;
+  }
+
+  .forms {
+    padding: 40px 30px;
+  }
+
+  .header-text h1 {
+    font-size: 32px;
+  }
+
+  .right-text-section h2 {
+    font-size: 32px;
+  }
+
+  .social-login {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+
+@media (max-width: 480px) {
+  main {
+    margin: 10px;
+    width: 95%;
+  }
+
+  .forms {
+    padding: 20px 20px;
+  }
+
+  .header-text h1 {
+    font-size: 28px;
+  }
+
+  .right-text-section h2 {
+    font-size: 28px;
+  }
+
+  .social-login {
+    flex-direction: column;
+    gap: 0;
+  }
+}
